@@ -1,0 +1,23 @@
+Part I: 
+
+We did as the readme file suggested which was to use the hash table implemented for Homework 6, and modified it accordingly so that it resizes itself as |v| changes.  We have our Hash Table stored in HashTableChained.java (in the dict package) and we added a resizing at the bottom of the code, which resized the hash table by either doubling the size when the load factor surpasses 0.75 or divides by two if the size falls below 0.25.
+
+For getVertices(), we implemented this method by maintaining a DList of vertices, so that going through the list takes O(V) time. For removeVertex(), in order to make it run in O(d) time, we implemented the adjacency EList (essentially same as DList with minor changes) containing each edge and attached this list to the associated vertex within the vertex DList. By removing each edge of the given vertex at a time and each edge removal takes O(1) time, it takes O(d) time to traverse through the adjacency edge list.
+
+For getNeighbors(),  we maintain an adjacency list of edges for each vertex in our EList.
+
+Because each edge (u, v) must appear in two adjacency lists, to remove u from the graph we need to remove every edge incident on u from the adjacency lists of u's neighbors as well as support removeVertex() in O(d) time (as stated in the readme). To do so, our group used two nodes: ListNode vertexU and vertexV: the first suggested option in the readme file.
+
+For removeEdge(), isEdge(), and weight() to run in O(1) time, we have our second hash table for our edges: edgeHashTable. We did use the VertexPair class as the key for our edge hash table as suggested.
+
+For vertexCount(), edgeCount(), and degree() in O(1) time, we keep counts of the vertices, edges, and degree of each vertex with our private ints: countVertex and countEdge.
+
+Part II:
+
+As the readme states, our Kruskal's algorithm works in the following way:
+First it creates a new WUgraph "t" which has the same vertices as G and no edges.
+Then we have an array of all the vertices in G, using multiple calls to getNeighbors() to obtain the complete list of edges which we store in a list "eList."  Specifically, we only add the edge if it is going from a smaller vertex to a larger one to avoid adding duplicate edges to our eList.
+
+We use our sorting algorithm quickSort from homework 8 in order to sort the edges by weight in O(|E| log |E|) time. 
+
+Lastly, we find the edges of t using disjoint sets. To map the objects that serve as vertices to unique integers, we implement KruskalHashTable.java: a hash table for Kruskal.  It is not the same hash table as the wuGraph's since Kruskal cannot access that hash table.

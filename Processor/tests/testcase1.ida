@@ -1,0 +1,23 @@
+    #
+    # TEST CASE 1
+    # YOUR TEST CASE GOES HERE
+    #
+
+#9 10 12 13 are 0s
+#Tina's
+
+DIV $t2 $t1 $0
+MUL $t3 $t2 $t1
+LW $t0 5($t2)
+SW $t0 5($t2)
+SL $t1 $t2 1
+SR $t2 $t0 5
+SR $t2 $t1 1
+AND $t2 $t1 $t2
+OR $t3 $t2 $t3
+REV $t4 $t3 5
+XOR $t5 $t4 $t5
+ADD $t6 $t5 $t6
+SUB $t7 $t6 $t7
+MUL $t8 $t7 $t8
+DIV $t9 $t8 $t8

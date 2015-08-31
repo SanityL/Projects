@@ -1,0 +1,33 @@
+    #
+    # TEST CASE 4
+    # Non-word aligned tests
+    #
+
+FACT: 
+SUB $sp $sp 2
+SW $ra 1($sp) 
+SW $a0 0($sp) 
+ADD $v0 $0 1 
+ADD $jc $0 $a0 
+JLE @FACT_RETURN 
+SUB $a0 $a0 1 
+JAL @FACT 
+LW $a0 0($sp) 
+MUL $v0 $v0 $a0 
+FACT_RETURN:
+
+LW $ra 1($sp)
+
+ADD $sp $sp 2
+J $ra
+
+#My unaligned tests work
+#SW $a0 1($a1)
+#LW $a2 1($a1)
+#SW $a2 1($a3)
+#LW $a4 1($a3)
+
+#SW $t10 1($t11)
+#LW $t12 1($t11)
+#SW $t12 1($t13)
+#LW $t14 1($t13)

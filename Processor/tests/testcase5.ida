@@ -1,0 +1,7 @@
+    #
+    # TEST CASE 5
+    # YOUR TEST CASE GOES HERE
+    #
+
+STU $t3 $t2 $t1
+JAL $t0

@@ -1,0 +1,20 @@
+    #
+    # TEST CASE 2
+    # YOUR TEST CASE GOES HERE
+    #
+
+SL $t0 $t1 5
+SR $t1 $t0 5
+AND $t2 $t1 $t2
+OR $t3 $t2 $t3
+REV $t4 $t3 5
+XOR $t5 $t4 $t5
+ADD $t6 $t5 $t6
+SUB $t7 $t6 $t7
+MUL $t8 $t7 $t8
+DIV $t9 $t8 $t8
+DIV $t10 $t8 $0
+ADD $t11 $t10 -5
+MUL $t12 $t11 $10
+SUB $jc $t0 $t19
+JGE $t1

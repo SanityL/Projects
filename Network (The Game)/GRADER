@@ -1,0 +1,145 @@
+                                     GRADER
+
+Name of student running submit: Tina Tu 
+Login of student running submit: cs61b-aed
+
+Second team member's name: Anthony Yu
+Second team member's login: cs61b-adv
+
+Third team member's name (if any): Jacob Lin
+Third team member's login: cs61b-azz
+
+IMPORTANT:  Once you've submitted Project 2 once, the same team member should
+submit always.  If a different teammate must submit, inform cs61b@cory.eecs of
+all the details.  Include a complete list of team members, and let us know
+which submission you want graded.
+
+If you've submitted your project once, or even written a substantial amount of
+code together, you may not change partners without the permission of the
+instructor.
+===============================================================================
+Does your program compile without errors? n/a
+
+
+Have you tested your program on the 61B lab machines? n/a
+
+
+Did you successfully implement game tree search?  Did you successfully
+implement alpha-beta pruning?  Are there any limitations on it?  What is the
+default number of search levels set by the one-parameter MachinePlayer
+constructor (or is it a variable-depth search)? n/a
+
+
+Describe your board evaluation function in some detail. n/a
+
+
+Does your MachinePlayer use any special method of choosing the first few moves? n/a
+
+
+Is there anything else the graders should know to help them read your project? n/a
+
+
+
+Describe the classes, modules, and interfaces you designed before and while you
+implemented the project.  Your description should include:
+  -  A list of the classes your program uses.
+  
+  Board 
+  ChipList
+  ChipListNode	
+  
+  -  A list of each of the "modules" used in or by MachinePlayer, similar to
+     the list in the "Teamwork" section of the README (but hopefully more
+     detailed).  (If you're using a list class, that should probably count as
+     a separate module.)
+
+  Allmoves
+  Connection
+  Minimax search tree
+  AI evaluation function
+
+  -  For each module, list the class(es) the module is implemented in.
+
+  The class Board implements the modules allmoves, connection & minimax search tree and AI evalution function. 
+
+  -  For each module, say which of your team members implemented it.
+  Anthony: Connection, AI evaluation function
+  Tina: Allmoves, AI evaluation function
+  Jacob: Minimax tree search, AI evaluation function
+
+  -  For each module, describe its interface--specifically, the prototype and
+     behavior of each method that is available for external callers (outside
+     the module) to call.  Don't include methods that are only meant to be
+     called from within the module.
+
+  Allmoves's main methods: validmoves which takes in a player (color) & a move and returns a boolean, possiblemoves which takes in a player and returns a ChipList of all possible moves, and position which takes in player and returns a ChipList of the chips' positions. Validmoves also has a helper function called myNeighbor, which takes in a player and a move, and returns the total number of adjacent chips to the current move. Lastly we have makeMove and undoMove which both take in a color and a move, updating the board.
+
+  Connection's main methods: findconnection which will take in a player & a location (x,y) and returns all connections to that specific location, and network which takes in a player and returns a boolean value depending on whether or not there is indeed a network corresponding with the current player.  Additionally, network has a helper function called hasNetWork which takes in a ChipList that stores a potential connection and an integer "level" which represents the number of chips inside the network and returns a boolean. Connection also uses isOutOfnewboard which take in a position and returns a boolean dependent upon if the chip is place within the specified dimensions of the board, hasNoChipsInGoal takes in a player and returns a boolean & checks if there are any chips within the current player's goal, ChipsInOneGoal takes in a player and returns a ChipListof the chips in the player's goal.
+
+  Minimax search tree would implement alpha beta pruning.  It would take in a player and return the best move.
+  AI evaluation function would have a method evaluate which takes in a board and returns the score.
+
+     For each method, provide (1) a method prototype and (2) a complete,
+     unambiguous description of the behavior of the method/module.  This
+     description should also appear before the method in your code's comments.
+
+  public boolean validmoves(int color, Move m) {
+    return boolean;
+  } //This method will return true or false depending on if the move is valid or not. 
+
+  public int myNeighbor(int color, Move m) {
+    return int totalneighbors;
+  } /* myNeighbor takes in a "color," representing the player, and a move. This is a helper function to validmoves and returns the total number of adjacent chips to the current move passed in. */
+
+  public ChipList possiblemoves(int color) {
+    return ChipList possmoves;
+  } //This method will return a ChipList of all valid moves.
+
+  public ChipList position(int color) {
+    return ChipList positions;
+  } //This method will return a ChipList with all positions of where the current player's chips are.
+
+  public ChipList findconnection(int color, int x, int y) {
+    return ChipList connect;
+  } /*This method will take in a player and a position and return a ChipList of all connections to the
+    specified location. */
+
+  public boolean isOutOfnewboard(int x, int y) {
+    return boolean;	
+  } //This method takes in a position and returns a boolean, true if out of specified dimensions.
+
+  public boolean hasNoChipsInGoal(int color) {
+    return noChips1 || noChips2;
+  } //This method take in a player and returns a boolean, true if no chips are in current player's goal.
+
+  public ChipsInOneGoal(int color) {
+    return ChipList starters;
+  } //This method takes in a player and returns a ChipList of all chips within the current player's goal.
+
+  public network(int color) {
+    return boolean;
+  } //This method takes in a player and returns true or false, depending on whether or not the player has a 
+   //network.
+
+  public chooseMove(int color) {
+    return bestmove;
+  } //This method is our minimax search tree, in which it takes in a player and returns the best move for 
+   //that player.
+
+  public evaluate(Board newboard) {
+    return int score;
+  } //This method will be our AI evaluation function that takes in the board and returns the score of that 
+    //board.
+
+  public void makeMove(int color, Move m) {
+  } //This method is our makeMove function that takes in a player and a move, and it will update the 
+    //newboard, adding the specified move.
+
+  public void undoMove(int color, Move m) {
+  } //This method is our undoMove function that takes in a player and a move, and it will update the 
+    //newboard, undoing the specified move.
+
+You will probably need to change some of your design decisions as you go; be
+sure to modify this file to reflect these changes before you submit your
+project.  Your design of classes and interfaces will be worth 10% of your
+grade.

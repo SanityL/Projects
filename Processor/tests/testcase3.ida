@@ -1,0 +1,20 @@
+    #
+    # TEST CASE 3
+    # YOUR TEST CASE GOES HERE
+    #
+
+#0 1 are 0s
+
+SW $t4 $t5($t6)
+LW $t4 $t5($t6)
+
+#My unaligned tests work
+SW $a0 1($a1)
+LW $a2 1($a1)
+SW $a2 1($a3)
+LW $a4 1($a3)
+
+SW $t10 1($t11)
+LW $t12 1($t11)
+SW $t12 1($t13)
+LW $t14 1($t13)

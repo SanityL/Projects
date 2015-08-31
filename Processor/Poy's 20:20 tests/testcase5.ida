@@ -1,0 +1,159 @@
+and $t0 $t0 0
+and $t1 $t1 0
+and $t2 $t2 0
+and $t3 $t3 0
+and $t4 $t4 0
+and $t5 $t5 0
+and $t6 $t6 0
+and $t7 $t7 0
+and $jc $jc 0
+
+#J
+add $t2 $t2 5
+div $t4 $t2 $t2
+j @loop
+add $t6 $t6 8
+add $t7 $t7 9
+loop:
+add $t1 $t1 3
+
+
+#JGT
+add $jc $jc 1
+add $t2 $t2 5
+div $t4 $t2 $t2
+jgt @loop1
+add $t6 $t6 8
+add $t7 $t7 9
+loop1:
+add $t1 $t1 3
+
+and $jc $jc 0
+add $t2 $t2 5
+div $t4 $t2 $t2
+jgt @hi
+add $t6 $t6 8
+add $t7 $t7 9
+hi:
+add $t1 $t1 3
+
+
+#JEQ
+add $jc $jc 1
+add $t2 $t2 5
+div $t4 $t2 $t2
+jeq @loop2
+add $t6 $t6 8
+add $t7 $t7 9
+loop2:
+add $t1 $t1 3
+
+and $jc $jc 0
+add $t2 $t2 5
+div $t4 $t2 $t2
+jeq @loop3
+add $t6 $t6 8
+add $t7 $t7 9
+loop3:
+add $t1 $t1 3
+
+and $jc $jc 0
+
+#JLT
+add $t2 $t2 5
+div $t4 $t2 $t2
+jlt @loop4
+add $t6 $t6 8
+add $t7 $t7 9
+loop4:
+add $t1 $t1 3
+
+add $jc $jc -1
+add $t2 $t2 5
+div $t4 $t2 $t2
+jlt @loop5
+add $t6 $t6 8
+add $t7 $t7 9
+loop5:
+add $t1 $t1 3
+
+and $jc $jc 0
+
+#JLE
+add $t2 $t2 5
+div $t4 $t2 $t2
+jle @loop6
+add $t6 $t6 8
+add $t7 $t7 9
+loop6:
+add $t1 $t1 3
+
+add $jc $jc -1
+add $t2 $t2 5
+div $t4 $t2 $t2
+jle @loop7
+add $t6 $t6 8
+add $t7 $t7 9
+loop7:
+add $t1 $t1 3
+
+and $jc $jc 0
+
+#JNE
+add $t2 $t2 5
+div $t4 $t2 $t2
+jne @loop8
+add $t6 $t6 8
+add $t7 $t7 9
+loop8:
+add $t1 $t1 3
+
+add $jc $jc -1
+add $t2 $t2 5
+div $t4 $t2 $t2
+jne @loop9
+add $t6 $t6 8
+add $t7 $t7 9
+loop9:
+add $t1 $t1 3
+
+and $jc $jc 0
+
+#JGE
+add $t2 $t2 5
+div $t4 $t2 $t2
+jge @loop10
+add $t6 $t6 8
+add $t7 $t7 9
+loop10:
+add $t1 $t1 3
+
+add $jc $jc -1
+add $t2 $t2 5
+div $t4 $t2 $t2
+jge @loop11
+add $t6 $t6 8
+add $t7 $t7 9
+loop11:
+add $t1 $t1 3
+
+add $jc $jc 10
+add $t2 $t2 5
+div $t4 $t2 $t2
+jge @loop12
+add $t6 $t6 8
+add $t7 $t7 9
+loop12:
+add $t1 $t1 3
+
+
+#ADDRESS
+and $t0 $t0 0
+and $t1 $t1 0
+add $t0 $t0 160
+
+j $t0
+add $t1 $t1 13
+
+loop1234:
+add $t1 $t1 1

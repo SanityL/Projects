@@ -1,0 +1,14 @@
+    #
+    # TEST CASE 4
+    # YOUR TEST CASE GOES HERE
+    #
+
+
+REV $t4 $t3 5
+MUL $t9 $t7 $t8
+DIV $t9 $t8 $t8
+JAL $t0
+
+SW $ra 1($sp)
+SW $a0 0($sp)
+LW $ra 1($sp)
